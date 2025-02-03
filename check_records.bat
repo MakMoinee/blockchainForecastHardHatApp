@@ -1,1 +1,1 @@
-npx hardhat run scripts\getRecords.js --network localhost && pause
+npx hardhat run scripts\getRecords.js --network sepolia && pause

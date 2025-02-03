@@ -1,1 +1,1 @@
-npx hardhat run scripts/deploy.js --network localhost && pause
+npx hardhat run scripts/deploy.js --network sepolia && pause

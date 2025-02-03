@@ -1,7 +1,7 @@
 const { ethers } = require("hardhat");
 
 async function main() {
-  const contractAddress = "0x5fbdb2315678afecb367f032d93f642f64180aa3"; // Replace with your contract address
+  const contractAddress = "0xAC3d931d6d2c201FcF82eced7Be4A42Ce1772692"; // Replace with your contract address
   const EnergyForecast = await ethers.getContractFactory("EnergyForecast");
   const contract = await EnergyForecast.attach(contractAddress);
   const forecasts = await contract.getForecasts();

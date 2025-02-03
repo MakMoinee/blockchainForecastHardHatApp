@@ -4,21 +4,22 @@ pragma solidity ^0.8.28;
 contract EnergyForecast {
     struct Forecast {
         string date; // YYYY-MM-DD format
-        uint256 energyConsumption; // in kWh
+        string energyConsumption; // Stored as string for readability
     }
 
     mapping(address => Forecast[]) private userForecasts;
     address public owner;
 
-    event ForecastRecorded(address indexed user, string date, uint256 energyConsumption);
+    event ForecastRecorded(address indexed user, string date, string energyConsumption); // Amount is now a string
 
     constructor() {
         owner = msg.sender;
     }
 
-    function recordForecast(string memory _date, uint256 _energyConsumption) public {
+    function recordForecast(string memory _date, string memory _energyConsumption) public {
         Forecast memory newForecast = Forecast(_date, _energyConsumption);
         userForecasts[msg.sender].push(newForecast);
+
         emit ForecastRecorded(msg.sender, _date, _energyConsumption);
     }
 
